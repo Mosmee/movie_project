@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Meta tags for character set and viewport -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Title of the webpage -->
+    <title> Video Streaming Website Template | PopcornBox.com</title>
+
+    <!-- Favicon and stylesheets -->
+    <link rel="shortcut icon" href="assets/images/fav.jpg">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/fontawsom-all.min.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+</head>
+
+<body>
+
+    <header class="container-fluid ">
+        <div class="header-top">
+            <div class="row align-items-center">
+                <div class="col d-lg-flex align-items-center text-light">
+                    <!-- Image on the left -->
+                    <img src="assets/images/img/popcornlogo.png" alt="" style="max-width: 100px;" class="logo">
+                    <b>Popcorn Box App</b>
+                </div>
+                <div class="col d-flex justify-content-end align-items-center">
+                    <!-- Button on the right -->
+                    <img id="user_update" class="rounded-circle m-2 " width="50px" onclick="goTosign_in()"
+                        src="assets/images/img/user2.jfif   ">
+                    <button type="button" class="btn btn-danger m-2" id="sign_in_button"
+                        onclick="goTosign_in()">Sign_in</button>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="header-bottom">
+            <div class="container ">
+                <div class="row nav-row justify-content-center">
+                    <div class=" nav-col align-items-center">
+                        <!-- Navigation -->
+                        <nav class="navbar navbar-expand-lg navbar-light">
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarNav">
+                                <ul class="navbar-nav" style="font-size: 14px; margin: 2px;">
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="index.html">Home</a>
+                                    </li>
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="movies.html">Movies</a>
+                                    </li>
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="TvShows.html">TVShows</a>
+                                    </li>
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="music.html">Music</a>
+                                    </li>
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="favourites.html">Favourites</a>
+                                    </li>
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="upcoming.html">Upcoming Movies</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-md-6">
+                <input type="text" id="searchInput" placeholder="Search here" class="form-control">
+            </div>
+            <div class="col-md-3">
+                <button type="button" class="btn btn-primary btn-block" onclick="performSearch()">Search</button>
+            </div>
+        </div>
+    </div>
+    <!------------------------------------search result------------------------------------->
+    <div class="container">
+        <div class="video-row row" id="searchResults">
+            <!-- Search results -->
+        </div>
+    </div>
+    <!-- Section for Crime Movies -->
+    <div class="latest-video latest-video container-fluid">
+        <div class="container">
+            <div class="row no-margin video-title">
+                <h6><i class="fas fa-book"></i>
+                 CRIME MOVIES
+                </h6>
+            </div>
+            <div class="video-row row" id="video-container-crime">
+            </div>
+        </div>
+    </div>
+
+    <!-- Latest Videos Section for English Movies -->
+    <div class="latest-video latest-video container-fluid">
+        <div class="container">
+            <div class="row no-margin video-title">
+                <h6><i class="fas fa-book"></i>ACTION MOVIES </h6>
+            </div>
+            <div class="video-row row" id="video-container-action">
+            </div>
+        </div>
+    </div>
+
+    <!-- Latest Videos Section for Hindi Movies -->
+    <div class="latest-video latest-video container-fluid">
+        <div class="container">
+            <div class="row no-margin video-title">
+                <h6><i class="fas fa-book"></i>ADVENTURE MOVIES</h6>
+            </div>
+            <div class="video-row row" id="video-container-adventure">
+            </div>
+        </div>
+    </div>
+
+    <!-- Latest Videos Section for Adventure Movies -->
+    <div class="latest-video latest-video container-fluid">
+        <div class="container">
+            <div class="row no-margin video-title">
+                <h6><i class="fas fa-book"></i>DRAMA MOVIES</h6>
+            </div>
+            <div class="video-row row" id="video-container-drama">
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 about col-sm-12">
+                    <h2>
+                        <i class="fas fa-info-circle"></i>
+                        About Us
+                    </h2>
+                    <p>
+                        At Popcorn Box, we want to entertain the world. Whatever your taste, and no matter where you
+                        live, we give you access to best-in-class
+                        TV series, documentaries, feature films and mobile games. Our members control what they want to
+                        watch, when they want it, in one simple</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="copy">
+        <div class="container">
+            <!-- Copyright and Social Media Links -->
+            <a href="https://www.smarteyeapps.com/">2023 &copy; All Rights Reserved | Designed and Developed by
+                DGIJ</a>
+            <span>
+                <a href="">
+                    <i class="fab fa
+
+-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/groups/10411920/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://in.pinterest.com/prabnr/pins/">
+                    <i class="fab fa-pinterest-p"></i>
+                </a>
+                <a href="https://twitter.com/prabinraja89">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.facebook.com/freewebtemplatesbysmarteye">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+            </span>
+        </div>
+    </div>
+
+    <!-- Scripts Section -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="assets/js/jquery-3.2.1.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/plugins/scroll-fixed/jquery-scrolltofixed-min.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/movie_cat.js"></script>
+    <script src="assets/js/search.js"></script>
+    <script src="assets/js/check_log.js"></script>
+    <script src="assets/js/addtofav.js"></script>
+    <script src="assets/js/drm.js"></script>
+</body>
+
+</html>

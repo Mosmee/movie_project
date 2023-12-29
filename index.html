@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>
+        Video Streamimg Website</title>
+    <link rel="shortcut icon" href="assets/images/fav.jpg">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/fontawsom-all.min.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/css/top_movies.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <style>
+        nav {
+            height: 60px;
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <!--####################### Header Starts Here ###################-->
+    <header class="container-fluid ">
+        <div class="header-top">
+            <div class="row align-items-center">
+                <div class="col d-lg-flex align-items-center text-light">
+                    <!-- Image on the left -->
+                    <img src="assets/images/img/popcornlogo.png" alt="" style="max-width: 100px;" class="logo">
+                    <b>Popcorn Box App</b>
+                </div>
+                <div class="col d-flex justify-content-end align-items-center">
+                    <!-- Button on the right -->
+                    <img id="user_update" class="rounded-circle m-2 " width="50px" onclick="goTosign_in()"
+                        src="assets/images/img/user2.jfif   ">
+                    <button type="button" class="btn btn-danger m-2" id="sign_in_button"
+                        onclick="goTosign_in()">Sign_in</button>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="header-bottom">
+            <div class="container ">
+                <div class="row nav-row justify-content-center">
+                    <div class=" nav-col align-items-center">
+                        <!-- Navigation -->
+                        <nav class="navbar navbar-expand-lg navbar-light">
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarNav">
+                                <ul class="navbar-nav" style="font-size: 14px; margin: 2px;">
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="index.html">Home</a>
+                                    </li>
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="movies.html">Movies</a>
+                                    </li>
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="TvShows.html">TVShows</a>
+                                    </li>
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="music.html">Music</a>
+                                    </li>
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="favourites.html">Favourites</a>
+                                    </li>
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="upcoming.html">Upcoming Movies</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-md-6">
+                <input type="text" id="searchInput" placeholder="Search here" class="form-control">
+            </div>
+            <div class="col-md-3">
+                <button type="button" class="btn btn-primary btn-block" onclick="performSearch()">Search</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="video-row row" id="searchResults">
+            <!-- Search results -->
+        </div>
+    </div>
+    <div class="banner-card container-fluid">
+        <div class="container">
+            <div class="row no-margin">
+                <div class="col-md-12 banner-slid">
+                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                        </ol>
+                        <div class="carousel-inner" id="car">
+                            <div class="carousel-item active">
+                                <a href="./assets/Video/video-3.mp4">
+                                    <img src="assets/images/img/hollywood-4.jpg" class="d-block w-100  " alt="...">
+                                    <div class="detail-card">
+                                        <p>Pictures, abstract symbols the ingredients with symbols the
+                                        </p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="carousel-item">
+                                <a href="single.html">
+                                    <img src="assets/images/video/banner_5.jpg" class="d-block w-100" alt="...">
+                                    <div class="detail-card">
+                                        <p>Pictures, abstract symbols the ingredients with symbols the
+                                        </p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="carousel-item">
+                                <a href="single.html">
+                                    <img src="assets/images/video/banner_8.webp" class="d-block w-100" alt="...">
+                                    <div class="detail-card">
+                                        <p>Pictures, abstract symbols the ingredients with symbols the
+                                        </p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="carousel-item">
+                                <a href="single.html">
+                                    <img src="assets/images/video/banner_7.jpg" class="d-block w-100" alt="...">
+                                    <div class="detail-card">
+                                        <p>Pictures, abstract symbols the ingredients with symbols the
+                                        </p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
+                            data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button"
+                            data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-3 vgbh">
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!--####################### Trending Starts Here ###################-->
+    <div class="latest-video latest-video container-fluid">
+        <div class="container">
+            <div class="row video-title no-margin">
+                <h3>
+                    Latest Movies
+                </h3>
+            </div>
+            <div class="latest-video latest-video container-fluid">
+                <div class="container">
+
+                    <div class="video-row row" id="video-container-crime">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+    <!--####################### Latest Videos Starts Here ###################-->
+    <div class="latest-video latest-video container-fluid">
+        <div class="container">
+            <div class="row no-margin video-title">
+                <h3>
+                    <!-- <i class="fas fa-book"></i> -->
+                    Top Web Series For You
+                </h3>
+            </div>
+            <div class="video-row row">
+                <div class="container">
+
+                    <div class="video-row row" id="video-container-shows">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--####################### Category Starts Here ###################-->
+        <section class="sesion-type">
+            <div class="container">
+                <div class="inner-title row">
+                    <h2>Top Category</h2>
+                    <p>If you’re not satisfied with the answer, here are some different genres of movies and series that
+                        you
+                        can watch to make your weekends more enjoyable.🎬🍿</p>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 col-sm-6">
+                        <div class="single-sess">
+                            <a href="suspense_thriller.html">
+                                <img src="assets/images/img/Suspense-Thriller.jpg"> </a>
+                            <p>Suspense Thriller</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="single-sess">
+                            <a href="sci_fi.html">
+                                <img src="assets/images/img/Sci-Fi.jfif" id="img1"></a>
+                            <p>Sci-Fi</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="single-sess">
+                            <a href="rom-com.html">
+                                <img src="assets/images/img/Rom-com.jfif" id="img1"></a>
+                            <p>Rom-Com</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="single-sess">
+                            <a href="comedy.html">
+                                <img src="assets/images/img/comedy.jpg" id="img1"></a>
+                            <p>Comedy</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="single-sess">
+                            <a href="mystery.html">
+                                <img src="assets/images/img/Msytery.jpg" id="img1"></a>
+                            <p>Mystery</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="single-sess">
+                            <a href="action.html">
+                                <img src="assets/images/img/Action.jfif" id="img1"></a>
+                            <p>Action</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="single-sess">
+                            <a href="drama.html">
+                                <img src="assets/images/img/Drama.jpg" id="img1"></a>
+                            <p>Drama</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="single-sess">
+                            <a href="crime.html">
+                                <img src="assets/images/img/Crime.jfif" id="img1"></a>
+                            <p>Crime</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="rating">
+                <span class="heading">User Rating</span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 about col-sm-12">
+                        <h2>
+                            <i class="fas fa-info-circle"></i>
+                            About Us
+                        </h2>
+                        <p>
+                            At Popcorn Box, we want to entertain the world. Whatever your taste,
+                            and no matter where you live, we give you access to best-in-class
+                            TV series, documentaries, feature films and mobile games.
+                            Our members control what they want to watch, when they want it, in one simple</p>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </footer>
+        <div class="copy">
+            <div class="container">
+                <a href="https://www.smarteyeapps.com/">2023 &copy; All Rights Reserved | Designed and Developed by
+                    DGIJ</a>
+
+                <span>
+                    <a href="">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/groups/10411920/">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://in.pinterest.com/prabnr/pins/">
+                        <i class="fab fa-pinterest-p"></i>
+                    </a>
+                    <a href="https://twitter.com/prabinraja89">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://www.facebook.com/freewebtemplatesbysmarteye">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                </span>
+            </div>
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="assets/js/index_cards.js"></script>
+<script src="assets/js/jquery-3.2.1.min.js"></script>
+<script src="assets/js/popper.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/plugins/scroll-fixed/jquery-scrolltofixed-min.js"></script>
+<script src="assets/js/script.js"></script>
+<fieldset disabled="disabled"></fieldset>
+<script src="../JS/new_login.js"></script>
+<script src="../JS/new_register.js"></script>
+<script src="assets/js/index.js"></script>
+<script src="assets/js/search.js"></script>
+<script src="assets/js/check_log.js"></script>
+<script src="assets/js/addtofav.js"></script>
+<script src="assets/js/drm.js"></script>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Star Rating</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      /* Setting default styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* Styling for the card */
+      .card {
+        max-width: 33rem;
+        background: #fff;
+        margin: 0 1rem;
+        padding: 1rem;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        width: 200px;
+        border-radius: 0.5rem;
+      }
+
+      /* Styling for stars */
+      .star {
+        font-size: 30px;
+      }
+
+      /* Styling for different star ratings */
+      .one {
+        color: rgb(255, 0, 0);
+      }
+
+      .two {
+        color: rgb(255, 106, 0);
+      }
+
+      .three {
+        color: rgb(251, 255, 120);
+      }
+
+      .four {
+        color: rgb(129, 207, 139);
+      }
+
+      .five {
+        color: rgb(21, 167, 10);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <!-- Span elements to represent stars and trigger the rating update -->
+      <span onclick="rating(1)" class="star">★</span>
+      <span onclick="rating(2)" class="star">★</span>
+      <span onclick="rating(3)" class="star">★</span>
+      <span onclick="rating(4)" class="star">★</span>
+      <span onclick="rating(5)" class="star">★</span>
+      <h3 id="output">Rating is: 0/5</h3>
+    </div>
+
+    <!-- Your HTML code remains the same -->
+
+<!-- Your HTML remains the same -->
+
+<script>
+  // JavaScript code
+  const rateUrl = "http://localhost:3000/user"; // Placeholder URL
+
+  let stars = document.getElementsByClassName("star");
+  let output = document.getElementById("output");
+  let currentUser = { // For demonstration, considering the first user
+    "email": "girija@gmail.com",
+    "phone": "12345678",
+    "password": "asdfghjk",
+    "id": 1,
+    "ratings": []
+  };
+
+  function rating(n) {
+    remove();
+    for (let i = 0; i < n; i++) {
+      let cls = "";
+      if (n === 1) cls = "one";
+      else if (n === 2) cls = "two";
+      else if (n === 3) cls = "three";
+      else if (n === 4) cls = "four";
+      else if (n === 5) cls = "five";
+      stars[i].className = "star " + cls;
+    }
+    if (output) {
+      output.innerText = "Rating is: " + n + "/5";
+      addRating(currentUser, n); // Call function to add the rating
+    } else {
+      console.error("Output element not found");
+    }
+  }
+
+  function remove() {
+    for (let i = 0; i < stars.length; i++) {
+      stars[i].className = "star";
+    }
+  }
+
+  function addRating(user, rating) {
+    // Generate a unique movie ID (For demo purpose, using a simple increment)
+    let movieID = "movie_" + (user.ratings.length + 1);
+
+    // Create a movie rating object
+    let movieRating = {
+      "movieID": movieID,
+      "movieTitle": "Movie Title", // Replace with the actual movie title
+      "rating": rating
+    };
+
+    // Add the movie rating to the user's profile
+    user.ratings.push(movieRating);
+
+    // Simulate sending data to the server using a placeholder URL
+    fetch(rateUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(currentUser) // Simulated data sending
+    })
+    .then(response => {
+      if (response.ok) {
+        console.log("Rating added successfully!");
+      } else {
+        console.error("Failed to add rating");
+      }
+    })
+    .catch(error => {
+      console.error("Error:", error);
+    });
+  }
+</script>
+
+    <!-- <script>
+      // JavaScript code
+      let stars = document.getElementsByClassName("star");
+      let output = document.getElementById("output");
+
+      function rating(n) {
+        remove();
+        for (let i = 0; i < n; i++) {
+          let cls = "";
+          if (n === 1) cls = "one";
+          else if (n === 2) cls = "two";
+          else if (n === 3) cls = "three";
+          else if (n === 4) cls = "four";
+          else if (n === 5) cls = "five";
+          stars[i].className = "star " + cls;
+        }
+        if (output) {
+          output.innerText = "Rating is: " + n + "/5";
+        } else {
+          console.error("Output element not found");
+        }
+      }
+
+      function remove() {
+        for (let i = 0; i < stars.length; i++) {
+          stars[i].className = "star";
+        }
+      }
+    </script> -->
+  </body>
+</html>

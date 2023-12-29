@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome!</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+  <script src="assets/js/check_log.js"></script>
+  <style>
+    .error {
+      color: red;
+    }
+
+    button:hover {
+      font-weight: bold;
+      transform: scale(1.1);
+    }
+
+    nav {
+      height: 75px;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-dark bg-danger">
+    <a class="navbar-brand" href="#">
+      <img src="assets/images/img/popcornlogo.png" width="40" height="40" class="d-inline-block align-top pop logo"
+        alt="" />
+      Popcorn Box App
+    </a>
+  </nav>
+
+  <div class="container mt-5">
+    <div class="row justify-content-center align-items-center">
+      <div class="col-lg-4 col-md-6 col-sm-12 text-center mb-4 mt-4">
+        <img src="assets/images/pop.gif" alt="popcorn" class="img-fluid" />
+      </div>
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <div class="text-center">
+          <h1>Welcome <p id="user_"></p>
+          </h1>
+          <h5>New Pic, Stronger Pass</h5>
+          <!-- Empower Your Profile: Change, Secure, Enjoy!" -->
+          <div class="mt-4">
+            <button type="button" class="btn btn-danger m-2" data-bs-toggle="modal" data-bs-target="#changePic">
+              Change Profile Pic
+            </button>
+            <button type="button" class="btn btn-danger m-2" data-bs-toggle="modal" data-bs-target="#changePass">
+              Change Password
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modified Change profile pic Modal -->
+  <!-- Modified Change profile pic Modal -->
+  <div class="modal fade mt-5" id="changePic" tabindex="-1" aria-labelledby="modifiedLoginModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header bg-danger text-light">
+          <h5 class="modal-title" id="modifiedLoginModalLabel modifiedLoginForm">
+            Change Profile Picture
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="d-flex justify-content-center align-items-center mt-3">
+          <label for="modifiedProfilePicInput" style="cursor: pointer">
+            <img id="modifiedProfilePic" class="rounded-circle" width="150px"
+              src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg" />
+          </label>
+          <input type="file" id="modifiedProfilePicInput" style="display: none;" accept="image/*">
+        </div>
+        <div class="mt-4 text-center">
+          <button class="btn btn-primary profile-button mb-5" type="button" onclick="updateProfilePic()">
+            Save Profile
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Change password modal -->
+  <div class="modal fade mt-5" id="changePass" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header bg-danger text-light">
+          <h5 class="modal-title" id="signupModalLabel">Change Password</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="changePassForm">
+              <div class="col-md-12 mt-3">
+                <label class="labels">Old Password</label>
+                <input type="password" name="opass" id="opass" class="form-control" placeholder="Enter old password"
+                  value="" />
+              </div>
+              <div class="col-md-12 mt-3">
+                <label class="labels">New Password</label>
+                <input type="password" name="npass" id="npassword" class="form-control" placeholder="Enter new password"
+                  pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\w\d\s])(?!.*\s).{8,}$"
+                  title="Password must contain at least 8 characters, 1 lowercase letter, 1 uppercase letter, 1 digit, and 1 special character."
+                  value="" />
+              </div>
+              <div class="col-md-12 mt-3">
+                <label class="labels">Confirm Password</label>
+                <input type="password" name="cpass" id="cpass" class="form-control" placeholder="Confirm password"
+                  value="" />
+              </div>
+            </div>
+            <div class="mt-4 text-center">
+              <button class="btn btn-primary profile-button mb-2" type="submit">
+                Save Password
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <!-- Include jQuery Validate plugin -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+  <script src="assets/js/update.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Look for changes in the 'modifiedProfilePicInput' element
+      document.getElementById("modifiedProfilePicInput").addEventListener("change", function (event) {
+        // Grab the first file that was selected in the input
+        const file = event.target.files[0];
+
+        // Prepare to read the contents of the selected file
+        const reader = new FileReader();
+
+        // When the file is loaded...
+        reader.onload = function (e) {
+          document.getElementById("modifiedProfilePic").src = e.target.result;
+          console.log(document.getElementById("modifiedProfilePic").src)
+        };
+
+        // Read the selected file as a URL that can be displayed
+        reader.readAsDataURL(file);
+      });
+    });
+
+  </script>
+
+  <script src="assets/js/drm.js"></script>
+</body>
+
+</html>
